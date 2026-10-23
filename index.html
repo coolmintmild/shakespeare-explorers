@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shakespeare Explorers</title>
+<style>
+  :root {
+    --bg: #f6f7f3; --card: #ffffff; --text: #1f2a28; --muted: #55625f;
+    --line: #d9dfdb; --accent: #0f6e63; --accent2: #b23a2e;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141918; --card: #1c2321; --text: #e7ecea; --muted: #a3b0ac;
+      --line: #2f3a37; --accent: #4fb3a5; --accent2: #e07a6e;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; line-height: 1.6;
+  }
+  main { max-width: 880px; margin: 0 auto; padding: 48px 16px 64px; }
+  h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 8px; }
+  .lead { color: var(--muted); margin: 0 0 32px; }
+  .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .card {
+    display: block; padding: 20px; border: 1px solid var(--line); border-radius: 10px;
+    background: var(--card); color: inherit; text-decoration: none;
+    border-top: 4px solid var(--accent);
+  }
+  .card.net { border-top-color: var(--accent2); }
+  .card:hover, .card:focus-visible { border-color: var(--accent); outline: none; }
+  .card.net:hover, .card.net:focus-visible { border-color: var(--accent2); }
+  .card h2 { font-size: 1.15rem; margin: 0 0 6px; }
+  .card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+  .card span { display: inline-block; margin-top: 12px; font-weight: 600; color: var(--accent); }
+  .card.net span { color: var(--accent2); }
+  footer { margin-top: 40px; font-size: 0.9rem; color: var(--muted); }
+  footer a { color: inherit; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Shakespeare Explorers</h1>
+  <p class="lead">Two web tools for exploring all 37 of Shakespeare's plays, built through AI-assisted vibe coding.</p>
+  <div class="grid">
+    <a class="card" href="sentiment/">
+      <h2>Shakespeare Sentiment Explorer</h2>
+      <p>Draw and compare the emotional arcs of the plays with VADER and a deep-learning model, by sentence, speech, or scene.</p>
+      <span>Open the tool &rarr;</span>
+    </a>
+    <a class="card net" href="network/">
+      <h2>Shakespeare Character Networks Explorer</h2>
+      <p>Follow stage and speech networks of characters across scenes and acts, with centrality, communities, and character focus.</p>
+      <span>Open the tool &rarr;</span>
+    </a>
+  </div>
+  <footer>
+    Code: MIT License. Data: CC BY-NC 4.0. Network data derived from
+    <a href="https://dracor.org/shake">ShakeDraCor</a> (Folger Shakespeare, CC BY-NC 3.0).
+    Source code and data are available in this site's GitHub repository.
+  </footer>
+</main>
+</body>
+</html>
